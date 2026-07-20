@@ -72,13 +72,11 @@ if(industrySection){
   const openBar=document.createElement('div');
   openBar.className='industry-open';
   openBar.innerHTML='<a href="'+INDUSTRY_AGENT_URL+'" target="_blank" rel="noopener">在新窗口打开 AI 助手 ↗</a>';
-  const frame=document.createElement('iframe');
-  frame.className='industry-frame';
-  frame.title='智慧医疗行业 AI 助手';
-  frame.src=INDUSTRY_AGENT_URL;
-  frame.loading='lazy';
-  frame.referrerPolicy='strict-origin-when-cross-origin';
-  industrySection.append(openBar,frame);
+  const launch=document.createElement('div');
+  launch.className='industry-frame';
+  launch.style.cssText='display:grid;place-items:center;text-align:center;padding:30px';
+  launch.innerHTML='<div><h2 style="margin:0 0 12px">智慧医疗行业 AI 助手</h2><p style="color:var(--muted);line-height:1.7">当前使用 EdgeOne 临时预览地址，需要在新窗口中访问。<br>绑定正式域名后即可直接嵌入工作台。</p><a class="btn primary" style="display:inline-block;text-decoration:none;margin-top:12px" href="'+INDUSTRY_AGENT_URL+'" target="_blank" rel="noopener">打开 AI 助手 ↗</a></div>';
+  industrySection.append(openBar,launch);
 }
 render();
 </script>
